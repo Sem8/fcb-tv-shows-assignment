@@ -16,9 +16,13 @@ const Episodes = props => {
 //     });
 //   }, []);
 
+let config = {
+  headers: {'Access-Control-Allow-Origin': '*'}
+};
+
 let getEpisodes = () => {
     axios
-    .get(`seasons/${seasonId}/episodes`)
+    .get(`seasons/${seasonId}/episodes`, config)
     .then(res => {
       // console.log("fuzzy search shows", res);
       setEpisodes(res.data);
