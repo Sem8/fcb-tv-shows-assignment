@@ -1,0 +1,14 @@
+.listOfEpisodes {
+    display: flex;
+    // flex-direction: row;
+}
+
+.episodeCircle {
+    display: flex;
+    padding: 10px; 
+    margin: 20px;
+    background-color: #E94F37;
+    border-radius: 50%;
+    width:5px;
+    height:5px;
+}
