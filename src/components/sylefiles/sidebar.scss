@@ -1,0 +1,56 @@
+.homeSideBar {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: row;
+  background: #DCDCDC;
+  border: 2px solid blue;
+  // width: 17rem;
+  max-width: 20rem;
+  height: 80%;
+  justify-content: center;
+  align-content: center;
+
+  & .sidebarText {
+    justify-content: center;
+    margin: 0.2rem;
+    font-size: 2.5rem;
+  }
+
+  & .orangeBar {
+    display: flex;
+    justify-content: center;
+    // flex-direction: column;
+    background: #d3d3d3;
+    background-color: #e94f37;
+    border-radius: 20px;
+    height: 25vh;
+    width: 1.5rem;
+    color: orange;
+    // align-self: center;
+    margin-top: 4.5rem;
+    margin-right: 1.5rem;
+  }
+  // & .circleBackground {
+  //     background-color: white;
+  //     height: 100%;
+  //     align-items: stretch;
+  // }
+}
+
+.sidebarCircle {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  background-color: #e94f37;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+  .homeSideBar {
+    width: 30%;
+    display: none;
+  }
+}

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import axios from "../axios-instance";
 
-// import SummarySeasons from './SummarySeasons';
-import PopupSearch from "./PopupSearch";
+import autoCompleteSearch from './sylefiles/autoCompleteSearch.scss';
+
 import SummarySeasons from "./SummarySeasons";
 
 const AutoCompleteSearch = props => {
@@ -61,10 +61,11 @@ const AutoCompleteSearch = props => {
       return null;
     }
     return (
-      <ul>
+      <ul className='autoCompleteTextUl'>
         {suggestions.map(eachSuggestion => (
           <li
             key={eachSuggestion.show.id}
+            className='autoCompleteTextLi'
             onClick={() =>
               suggestionSelected(
                 eachSuggestion.show.name,
@@ -73,17 +74,21 @@ const AutoCompleteSearch = props => {
               )
             }
           >
-            {eachSuggestion.show.name}
-            <span>
+            <p className='autoCompleteTextName'>{eachSuggestion.show.name}</p>
+            {/* <span className='autoCompleteTextDate'> */}
+            <p className='autoCompleteTextDate'>
               Premiered on{" "}
               {new Date(eachSuggestion.show.premiered).toDateString().slice(4)}
-            </span>
-            <span>
-              Rating:{" "}
+              </p>
+            {/* </span> */}
+            {/* <span className='autoCompleteTextRating'> */}
+              <p className='autoCompleteTextRating'>
+              Rating :{" "}
               {eachSuggestion.show.rating.average == null
                 ? "Unknown"
                 : eachSuggestion.show.rating.average}
-            </span>
+                </p>
+            {/* </span> */}
           </li>
         ))}
       </ul>
@@ -93,7 +98,7 @@ const AutoCompleteSearch = props => {
   return (
     <>
       <div className="search">
-        <div className="title">Search TV show</div>
+        <h5 className="title">Search TV show</h5>
         <div className="content">
           <input
             type="text"
@@ -101,6 +106,7 @@ const AutoCompleteSearch = props => {
             value={text}
             onChange={e => setText(e.target.value)}
             onInput={getSuggestions}
+            className='autoCompleteInput'
           />
           {renderSuggestions()}
           {selectedShowId && selectedShowSummary ? (

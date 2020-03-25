@@ -5,6 +5,8 @@ import axios from "../axios-instance";
 
 import Episodes from "./Episodes";
 
+import summaryseasons from "./sylefiles/summaryseasons.scss";
+
 const SummarySeasons = props => {
   const { selectedShowId, selectedShowSummary, selectedShowName } = props;
 
@@ -34,18 +36,21 @@ const SummarySeasons = props => {
 
   return (
     <>
-      <div>{selectedShowName}</div>
-      <div>{selectedShowSummary}</div>
+      <div className="selectedShow">
+        <div className="selectedShowName">{selectedShowName}</div>
+        <div className="selectedShowSummary">{selectedShowSummary}</div>
+      </div>
 
-      <p>Seasons</p>
+      <p className="seasonsText">Seasons</p>
 
       <select
         multiple={true}
         value={[inputValue, seasonId]}
         onChange={handleChange}
         onChange={() => seasonSelected(inputValue, seasonId)}
+        className='seasonSelectMenu'
       >
-        <option value="Select season">Select season</option>
+        <option className='seasonOption1' value="Select season">Select season</option>
 
         {seasons &&
           seasons.map(eachSeason => {
@@ -53,9 +58,10 @@ const SummarySeasons = props => {
               <>
                 <option
                   key={eachSeason.id}
+                  className='seasonOption'
                   value={eachSeason.number}
                   onClick={() =>
-                    seasonSelected(eachSeason.number, eachSeason.id)
+                    seasonSelected(eachSeason.number, eachSeason.id)                    
                   }
                 >
                   Season {eachSeason.number}
@@ -65,9 +71,9 @@ const SummarySeasons = props => {
           })}
       </select>
 
-      {console.log("selected season value: ", inputValue)}
+      {/* {console.log("selected season value: ", inputValue)}
       {console.log("season Id: ", seasonId)}
-      {console.log("seasonIsSelected: ", seasonIsSelected)}
+      {console.log("seasonIsSelected: ", seasonIsSelected)} */}
       {seasonIsSelected ? <Episodes seasonId={seasonId} /> : null}
     </>
   );

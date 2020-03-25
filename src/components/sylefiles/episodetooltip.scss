@@ -1,0 +1,27 @@
+.episode-tooltip {
+    display: flex; 
+    flex-direction: row;
+    // max-width: 100rem;
+
+    & .tooltip-text {
+        display: flex;
+        flex-direction: column;
+        margin: 0.3rem 1.5rem;
+
+        & .episode-tooltip-name {
+            font-weight: bold;
+        }
+    }
+    
+    & img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .episode-tooltip {
+      width: 100%;
+    }
+  }

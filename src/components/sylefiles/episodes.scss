@@ -1,14 +1,55 @@
 .listOfEpisodes {
-    display: flex;
-    // flex-direction: row;
+  display: flex;
+  // flex-direction: row;
+  border: 1px solid gray;
+  max-width: 100rem;
+  flex-wrap: wrap;
+  margin-top: 30rem;
+  // align-content: center;
+  justify-content: flex-start;
+  font-family: "Lato", sans-serif;
+}
+.outerEpisodeCircle {
+  display: flex;
+  position: relative;
+  padding: 1rem;
+  margin: 1rem;
+  border: 2px solid gray;
+  border-radius: 50%;
+  align-content: center;
+  width: 3rem;
+  height: 3rem;
+
+  & .episodeCircle {
+    // display: flex;
+    position: absolute;
+    padding: 1rem;
+    // margin: 1rem;
+    background-color: #e94f37;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+  }
 }
 
-.episodeCircle {
-    display: flex;
-    padding: 10px; 
-    margin: 20px;
-    background-color: #E94F37;
-    border-radius: 50%;
-    width:5px;
-    height:5px;
+.episodeNumLabel {
+  font-size: 1.4rem;
+  padding: 1rem;
+}
+
+.episodeNumber:hover {
+    font-weight: bold;
+}
+
+.episodeNumber:active {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .listOfEpisodes {
+    max-width: 90%;
+  }
 }
