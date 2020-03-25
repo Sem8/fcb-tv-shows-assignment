@@ -110,6 +110,7 @@ const Episodes = props => {
                     <Tippy
                       theme="light-border"
                       trigger="click"
+                      className='tippyToolTip'
                       content={
                         <EpisodeToolTip
                           image={episodeImg}

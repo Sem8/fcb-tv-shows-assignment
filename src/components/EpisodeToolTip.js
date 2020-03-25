@@ -13,7 +13,10 @@ const EpisodeToolTip = props => {
         <img src={image} className="episode-tooltip-img" />
 
         <div className="tooltip-text">
-          <p className="episode-tooltip-name">{name}</p>
+          <div className="episode-tooltip-name">
+            <p>{name}</p>
+            <p>X</p>
+          </div>
           <p className="episode-tooltip-summary">{summary}</p>
         </div>
       </div>
