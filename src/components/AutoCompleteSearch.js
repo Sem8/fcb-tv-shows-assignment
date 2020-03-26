@@ -15,9 +15,6 @@ const AutoCompleteSearch = props => {
   const [selectedShowId, setSelectedShowId] = useState(0);
   const [selectedShowSummary, setSelectedShowSummary] = useState("");
 
-  // const [isPopupOpen, setIsPopupOpen] = useState(false);
-  // const [showResult, setShowResult] = useState(false);
-
   let getSuggestions = () => {
     // console.log('text: ', text);
     axios
@@ -45,6 +42,14 @@ const AutoCompleteSearch = props => {
   //     });
   //   getSuggestions();
   // }, []);
+
+  let handleChange = e => {
+    if (/^[a-z][a-z\s]*$/i.test(e.target.value)) {
+      setText(e.target.value);
+    } else {
+      return <div></div>;
+    }
+  };
 
   let suggestionSelected = (value, id, summary) => {
     setText(value);
@@ -110,7 +115,14 @@ const AutoCompleteSearch = props => {
   return (
     <>
       <div className="search">
-        <h5 className="title">Search TV show</h5>
+        {/^[0-9-!@#$%*?]/i.test(text) ? (
+          <h5 className="errorTitle">
+            Search TV show <span className="bullet"></span> Please enter valid
+            title
+          </h5>
+        ) : (
+          <h5 className="title">Search TV show</h5>
+        )}
         <div className="content">
           <div className="searchInputContent">
             <input
