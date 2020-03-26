@@ -5,10 +5,7 @@ const SideBar = () => {
   return (
     <>
       <div className="homeSideBar">
-          {/* <div className='circleBackground'>  */}
-          <div className="sidebarCircle"></div> 
-          {/* </div> */}
-        
+        <div className="sidebarCircle"></div>
         <div className="sidebarText">
           <h1>TV</h1>
           <h1>SH</h1>

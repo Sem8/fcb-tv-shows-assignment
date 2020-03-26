@@ -10,22 +10,12 @@ import episodes from "./sylefiles/episodes.scss";
 
 const Episodes = props => {
   const { seasonId } = props;
-  //   console.log('seasonId type : ', typeof seasonId);
-  //   let seasonIdNum = seasonId.toString();
   const [episodes, setEpisodes] = useState([]);
 
   const [episodeImg, setEpisodeImg] = useState("");
   const [episodeName, setEpisodeName] = useState("");
   const [episodeSummary, setEpisodeSummary] = useState("");
   const [circleColor, setCircleColor] = useState("#E94F37");
-  // const [inputCircle, setInputCircle] = useState('');
-
-  // useEffect(() => {
-  //   axios.get(`seasons/${seasonId}/episodes`).then(res => {
-  //     console.log("res seasons: ", res);
-  //     setEpisodes(res.data);
-  //   });
-  // }, []);
 
   let config = {
     headers: { "Access-Control-Allow-Origin": "*" }
@@ -35,30 +25,12 @@ const Episodes = props => {
     axios
       .get(`seasons/${seasonId}/episodes`)
       .then(res => {
-        // console.log("fuzzy search shows", res);
         setEpisodes(res.data);
-        // console.log('episodes: ', episodes)
       })
       .catch(err => {
         console.log(err.message);
       });
   };
-
-  // let renderEpisodeTooltip = () => {
-  //   if (episodeImg && episodeName && episodeSummary) {
-  //     console.log("episode name: ", episodeName);
-  //     // return <EpisodeToolTip />;
-  //     return (
-  //       <>
-  //         <div className="episode-tooltip">
-  //           <img src={episodeImg} className="episode-tooltip-img" />
-  //           <p className="episode-tooltip-name">{episodeName}</p>
-  //           <p className="episode-tooltip-summary">{episodeSummary}</p>
-  //         </div>
-  //       </>
-  //     );
-  //   }
-  // };
 
   let episodeSelected = (e, epImg, epName, epSummary) => {
     setEpisodeImg(epImg);
@@ -78,7 +50,6 @@ const Episodes = props => {
 
   return (
     <>
-      {/* <div>List of episodes</div> */}
       {getEpisodes()}
       <div className="listOfEpisodes">
         {episodes &&
@@ -100,17 +71,10 @@ const Episodes = props => {
                       )
                     }
                   >
-                    {/* {episodeImg && episodeName && episodeSummary ? (
-                    <EpisodeToolTip
-                      image={episodeImg}
-                      name={episodeName}
-                      summary={episodeSummary}
-                    />
-                  ) : null} */}
                     <Tippy
                       theme="light-border"
                       trigger="click"
-                      className='tippyToolTip'
+                      className="tippyToolTip"
                       content={
                         <EpisodeToolTip
                           image={episodeImg}

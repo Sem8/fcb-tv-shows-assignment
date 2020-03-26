@@ -6,7 +6,6 @@ import episodetooltip from "./sylefiles/episodetooltip.scss";
 
 const EpisodeToolTip = props => {
   const { image, name, summary } = props;
-  //   console.log("episode name inside tool tip: ", name);
   return (
     <>
       <div className="episode-tooltip">

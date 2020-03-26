@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: row;
   background: #DCDCDC;
-  border: 2px solid blue;
-  // width: 17rem;
   max-width: 20rem;
   height: 80%;
   justify-content: center;
@@ -19,22 +17,15 @@
   & .orangeBar {
     display: flex;
     justify-content: center;
-    // flex-direction: column;
     background: #d3d3d3;
     background-color: #e94f37;
     border-radius: 20px;
     height: 25vh;
     width: 1.5rem;
     color: orange;
-    // align-self: center;
     margin-top: 4.5rem;
     margin-right: 1.5rem;
   }
-  // & .circleBackground {
-  //     background-color: white;
-  //     height: 100%;
-  //     align-items: stretch;
-  // }
 }
 
 .sidebarCircle {

@@ -3,14 +3,6 @@
   flex-direction: column;
   margin: 1rem 3rem;
   font-family: "Lato", sans-serif;
-
-  // & .autoCompleteInput {
-  //   outline: none;
-  //   width: 25rem;
-  //   height: 2rem;
-  //   border: 1px solid gray;
-  //   border-radius: 0.3rem;
-  // }
   & .searchInputContent {
     display: flex;
   }
@@ -19,7 +11,6 @@
     padding: 1.5rem 1rem;
     outline: none;
     width: 100%;
-    // max-width: 100rem;
     height: 2rem;
     border: 1px solid gray;
     border-radius: 0.3rem;
@@ -81,7 +72,6 @@
 .autoCompleteTextLi {
   display: flex;
   justify-content: space-between;
-  // padding: 0rem 3rem;
   cursor: pointer;
   & p {
     padding: 0rem 3rem;
@@ -108,12 +98,6 @@
     width: 100%;
   }
 }
-
-// @media screen and (max-width: 600px) {
-//   .autoCompleteInput {
-//     max-width: 90%;
-//   }
-// }
 
 @media screen and (max-width: 600px) {
   .autoCompleteTextUl {
