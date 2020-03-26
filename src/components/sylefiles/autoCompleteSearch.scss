@@ -11,9 +11,12 @@
   //   border: 1px solid gray;
   //   border-radius: 0.3rem;
   // }
+  & .searchInputContent {
+    display: flex;
+  }
 
   & .autoCompleteInput {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1rem;
     outline: none;
     width: 100%;
     // max-width: 100rem;
@@ -27,6 +30,20 @@
     font-weight: bold;
     font-size: 1.3rem;
 
+  }
+
+  & .clearButton {
+    background: none;
+    color: #e94f37;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 2px solid #e94f37;
+    border-radius: 0.4rem;
+    padding: 1rem 2rem;
+    margin: 1rem;    
+    cursor: pointer;
+    align-content: flex-end;
+    float:right;
   }
 }
 
@@ -68,15 +85,21 @@
 
 @media screen and (max-width: 600px) {
   .search {
-    width: 100%;
+    width: 90%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .autoCompleteInput {
-    max-width: 90%;
+  .content {
+    width: 100%;
   }
 }
+
+// @media screen and (max-width: 600px) {
+//   .autoCompleteInput {
+//     max-width: 90%;
+//   }
+// }
 
 @media screen and (max-width: 600px) {
   .autoCompleteTextUl {
